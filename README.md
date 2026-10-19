@@ -14,14 +14,13 @@ The mod samples the game every five seconds. Known mission and activity script n
 
 1. Install a [Script Hook V](https://www.dev-c.com/gtav/scripthookv) version matching your **Enhanced** game build, including its ASI loader.
 2. Download the release ZIP and copy `GtaVEnhancedPresence.asi`, `GtaVEnhancedPresence.ini`, and `GtaVEnhancedPresence.missions.ini` into the folder containing `GTA5_Enhanced.exe`.
-3. Create a Discord application in the [Developer Portal](https://discord.com/developers/applications), copy its Application ID, and enter it after `ApplicationId=` in `GtaVEnhancedPresence.ini`.
-4. Run the desktop Discord app with activity sharing enabled, then start GTA V Enhanced Story Mode.
+3. Run the desktop Discord app with activity sharing enabled, then start GTA V Enhanced Story Mode.
 
-The public download has a blank Application ID. Discord's [Developer Terms](https://support-dev.discord.com/hc/en-us/articles/8562894815383-Discord-Developer-Terms-of-Service) treat Application IDs as developer credentials and prohibit embedding them in open source projects.
+The v1.0.1 download is preconfigured to use this mod's Discord application and its three character portraits. No Discord Developer Portal setup is needed. You can instead create your own application and replace the Application ID and image keys in `GtaVEnhancedPresence.ini` if you want a different activity name or artwork. Source builds use the blank `GtaVEnhancedPresence.ini.example` unless you provide a local INI.
 
 If Discord keeps showing Rockstar's original GTA activity instead of this mod's mission and area details, open **Rockstar Games Launcher → Settings → General** and turn off **Discord Rich Presence**, then restart the game. Rockstar's built-in presence can compete with the mod's custom application. This setting is documented by [Rockstar Support](https://support.rockstargames.com/articles/3DE4ZKGVBkA64cEhPKFckS/managing-discord-rich-presence-for-rockstar-games-pc-titles).
 
-Discord takes the activity title and artwork from the application you configure. To show the active Story Mode character, upload three square images to the application's **Rich Presence → Art Assets** page with the keys `michael`, `franklin`, and `trevor`, then set `MichaelImageKey=michael`, `FranklinImageKey=franklin`, and `TrevorImageKey=trevor` in the INI. The mod updates the large image within five seconds of a character switch. `LargeImageKey` remains an optional fallback for menus or custom player models; an empty fallback uses the application's icon. Character artwork is not included in the release ZIP.
+Discord takes the activity title and artwork from the configured application. The v1.0.1 download uses this mod's uploaded assets under the keys `michael`, `franklin`, and `trevor`, so the large image updates within five seconds of a character switch. If you use your own application, upload three square images to its **Rich Presence → Art Assets** page and set `MichaelImageKey`, `FranklinImageKey`, and `TrevorImageKey` to their keys in the INI. `LargeImageKey` remains an optional fallback for menus or custom player models; an empty fallback uses the application's icon. Character artwork files are not included in the release ZIP.
 
 You can use different uploaded asset names in the three character fields. Leaving a character key empty uses the fallback.
 
